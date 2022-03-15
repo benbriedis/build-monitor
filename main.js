@@ -2,8 +2,10 @@ const {app,Tray} = require('electron');
 const chokidar = require('chokidar');
 const {open} = require('fs/promises');
 
-const statusFilePath = '/home/ben/ontoit/vos/deploy/DEV_BUILD_STATUS';
 const iconDir =	'./';
+
+const statusFilePath = process.argv[process.argv.length-1]; 
+
 
 app.whenReady().then(() => {
 	const tray = new Tray(iconDir+'/yellow.png');
